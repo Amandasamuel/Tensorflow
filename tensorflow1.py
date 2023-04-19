@@ -1,5 +1,3 @@
-# Script to create CSV data file from Pascal VOC annotation files
-# Based off code from GitHub user datitran: https://github.com/datitran/raccoon_dataset/blob/master/xml_to_csv.py
 
 import os
 import glob
@@ -28,9 +26,9 @@ def xml_to_csv(path):
 
 def main():
     for folder in ['train','validation']:
-        image_path = os.path.join(os.getcwd(), ('images/' + folder))
+        image_path = os.path.join(os.getcwd(), ('image/' + folder))
         xml_df = xml_to_csv(image_path)
-        xml_df.to_csv(('images/' + folder + '_labels.csv'), index=None)
+        xml_df.to_csv(('image/' + folder + '_labels.csv'), index=None)
         print('Successfully converted xml to csv.')
 
 main()
